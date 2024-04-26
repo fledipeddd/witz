@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  color: grey;
+  text-shadow: 0px 0px 4px grey;
+  -webkit-text-stroke: 1.8px;
+
+  background: black;
+  text-decoration: none;
+  font-style: normal;
+  font-family: Arial, sans-serif;
+  font-size: 20pt;
+
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: none;
+}
+
+div#aud {
+  position: absolute;
+  overflow: hidden;
+  padding-top: 3px;
+  padding-left: 5px;
+}
+
+.trigger {
+  text-align: center;
+  background: none;
+  width: 100vw;
+}
+
+.trigger:hover {
+  cursor: pointer;
+  -webkit-text-stroke: 5px !important;
+}
+

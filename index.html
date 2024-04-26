@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Witz</title>
+
+  <link rel="icon" type="image/x-icon" href="data/wmbi-fav.ico">
+  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preload" as="audio" href="data/nascondi la pietra.mp3">
+  <link rel="preload" as="audio" href="data/corporalia_giudecca.mp3">
+  <link rel="preload" as="audio" href="data/corporalia_murano.mp3">
+  <link rel="preload" as="audio" href="data/corporalia_santerasmo.mp3">
+  <link rel="preload" as="audio" href="data/ostraka files.mp3">
+</head>
+
+<body>
+  <div id="aud">
+    <p class="trigger">Nascondi la pietra</p>
+    <audio class="witz" loop src="data/nascondi la pietra.mp3" preload="auto"></audio>
+
+    <p class="trigger">Corporalia Giudecca</p>
+    <audio class="witz" loop src="data/corporalia_giudecca.mp3" preload="auto"></audio>
+
+    <p class="trigger">Corporalia Murano</p>
+    <audio class="witz" loop src="data/corporalia_murano.mp3" preload="auto"></audio>
+
+    <p class="trigger">Corporalia Sant'Erasmo</p>
+    <audio class="witz" loop src="data/corporalia_santerasmo.mp3" preload="auto"></audio>
+
+    <p class="trigger">Ostraka files</p>
+    <audio class="witz" loop src="data/ostraka files.mp3" preload="auto"></audio>
+  </div>
+</body>
+
+<script type="text/javascript">
+  var isPlaying = false;
+
+  function toggleAudio(event) {
+    if (event.target && event.target.className == 'trigger') {
+      var next = event.target.nextElementSibling;
+
+      isPlaying ? next.pause() : next.play();
+
+      next.onplaying = function() {
+        isPlaying = true;
+        event.target.style = "-webkit-text-stroke: 5px;"
+      }
+
+      next.onpause = function() {
+        isPlaying = false;
+        event.target.style = "-webkit-text-stroke: 1.8px;"
+      }
+    }
+  }
+  document.addEventListener('click', toggleAudio, true);
+</script>
+</html>
