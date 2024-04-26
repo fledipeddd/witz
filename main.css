@@ -10,7 +10,6 @@
   text-decoration: none;
   font-style: normal;
   font-family: Arial, sans-serif;
-  font-size: 20pt;
 
   scrollbar-width: none;
 }
@@ -21,6 +20,10 @@
 
 ::selection {
   background: none;
+}
+
+body {
+  font-size: 20pt;
 }
 
 div#aud {
@@ -41,3 +44,12 @@ div#aud {
   -webkit-text-stroke: 5px !important;
 }
 
+@media all and (max-width: 600px) {
+  body {
+    font-size: 17pt;
+  }
+
+  .trigger:hover {
+    -webkit-text-stroke: 1.8px;
+  }
+}
